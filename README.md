@@ -36,9 +36,9 @@ The exact way to do it depends on which build system you use, and is usually str
 #### Build
 
 Simply run `make` in the root directory. Note that the compiler needs to be g++.
-For more information on how to use other compilers see <https://github.com/google/googletest/tree/master/googletest>.
+For more information on how to use other compilers see <https://github.com/google/googletest/tree/master/googletest>
 
-#### Building Google Test Framework
+### Building Google Test Framework
 
 Suppose you put Google Test in directory `${GTEST_DIR}`. To build it, create a
 library build target (or a project as called by Visual Studio and Xcode) to
