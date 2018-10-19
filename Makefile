@@ -70,5 +70,5 @@ acceptance_tests.o : $(USER_DIR)/acceptance_tests.cc \
                      $(USER_DIR)/acceptance_tests.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/acceptance_tests.cc
 
-down_they_go : ball.o frame.o game.o gtest_main.a #acceptance_tests.o 
+down_they_go : ball.o frame.o game.o acceptance_tests.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
