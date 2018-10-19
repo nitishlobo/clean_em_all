@@ -29,11 +29,6 @@ void Game::Bowl(int pins_knocked) {
         frames_[currentFrameNumber].Bowl(pins_knocked);
     }
 
-    //Score for first ball bowled in the game
-    if ((currentFrameNumber == 0) && (frames_[currentFrameNumber].GetBallsBowled() == 1)) {
-        score_ = pins_knocked;
-    }
-
     //Score for spare
     if (currentFrameNumber > 0) {
         if (frames_[currentFrameNumber-1].isSpareAchieved() && (frames_[currentFrameNumber].GetBallsBowled() == 1)) {
