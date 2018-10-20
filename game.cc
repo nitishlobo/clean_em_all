@@ -43,7 +43,7 @@ void Game::Bowl(int pins_knocked) {
         //Add the two ball scores in the current frame if previous frame has a strike
         if (frames_[currentFrameNumber-1].isStrikeAchieved() && (frames_[currentFrameNumber].GetBallsBowled() == 2)) {
             int originalFrameScore = frames_[currentFrameNumber-1].GetScore();
-            int previousBallScore = frames_[currentFrameNumber].GetPinsKnockedOnRoll(1);
+            int previousBallScore = frames_[currentFrameNumber].GetPinsKnockedOnRoll(0);
             frames_[currentFrameNumber-1].SetScore(originalFrameScore + previousBallScore + pins_knocked);
             score_ = score_ + previousBallScore + pins_knocked;
         }
@@ -55,8 +55,13 @@ void Game::Bowl(int pins_knocked) {
             && (frames_[currentFrameNumber-1].GetBallsBowled() == 1)
             && (frames_[currentFrameNumber].GetBallsBowled() == 1)) {
                 int originalFrameScore = frames_[currentFrameNumber-2].GetScore();
-                int previousBallScore = frames_[currentFrameNumber-1].GetPinsKnockedOnRoll(1);
+                int previousBallScore = frames_[currentFrameNumber-1].GetPinsKnockedOnRoll(0);
                 frames_[currentFrameNumber-2].SetScore(originalFrameScore + previousBallScore + pins_knocked);
+
+                //Update the consecutive frame score
+                int previousFrameScore = frames_[currentFrameNumber-1].GetScore();
+                frames_[currentFrameNumber-1].SetScore(previousFrameScore + previousBallScore + pins_knocked);
+                //Update overall game score
                 score_ = score_ + previousBallScore + pins_knocked;
         }
     }

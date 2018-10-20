@@ -42,8 +42,8 @@ public:
     isStrikeAchieved - return boolean indicating whether frame consists of a strike
     GetBallsBowled - request number of balls bowled in a frame
     GetPinsKnockedOnRoll - request number of pins knocked for an individual ball inside the frame
-                            roll is the number of the roll inside the frame (starting from 1).
-                            Valid roll values for a typical game are 1, 2 or 3.
+                            roll is the number of the roll inside the frame (starting from 0).
+                            Valid roll values for a typical game are 0, 1 or 2.
     GetScore - request the score since the beginning of the game to this frame (inclusive)
 */
     bool isSpareAchieved();

@@ -19,7 +19,7 @@ void Frame::Bowl(int pins_knocked) {
 
     //Record a spare
     if (balls_.size() > 1) {
-        if (balls_[balls_.size()].GetPinsKnocked() + pins_knocked == 10) {
+        if (balls_[0].GetPinsKnocked() + balls_[1].GetPinsKnocked() == 10) {
             spareAchieved_ = true;
         }
     }
@@ -55,7 +55,7 @@ int Frame::GetBallsBowled() {
 
 /* Return number of pins knocked for an individual ball inside the frame. */
 int Frame::GetPinsKnockedOnRoll(int roll) {
-    return balls_[roll-1].GetPinsKnocked();
+    return balls_[roll].GetPinsKnocked();
 }
 
 /* Return the score since the beginning of the game to this frame (inclusive) */
