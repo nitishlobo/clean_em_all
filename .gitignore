@@ -386,3 +386,8 @@ ASALocalRun/
 *.o
 gtest_main.a
 down_they_go
+
+#------------------------------------------
+# FILES RELATING TO THE GIT GPG ENCRYPTED CREDENTIALS FOLLOW:
+usrbingit-credential-netrc
+usrlocalbingit-credential-netrc
